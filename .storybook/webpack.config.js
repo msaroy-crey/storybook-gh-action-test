@@ -17,6 +17,5 @@ module.exports = async ({ config, mode }) => {
         include: path.resolve(__dirname, "../"),
     });
 
-    delete config.resolve.alias['core-js'];
     return config;
 };
