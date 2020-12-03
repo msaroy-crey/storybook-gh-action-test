@@ -1,48 +1,48 @@
 {
-  "name": "@msaroy-crey/storybook-gh-action-test",
-  "version": "0.0.2",
-  "description": "Functional components, Storybook",
-  "author": "Crey Games ApS",
-  "license": "Proprietary and confidential",
-  "watch": true,
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/msaroy-crey/storybook-gh-action-test.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "scripts": {
-    "start": "start-storybook -p 1339 -s ./.storybook",
-    "dist": "babel src --out-dir dist --copy-files",
-    "reinstall": "(if exist rmdir /Q /S node_modules) && npm i",
-    "storybook": "npm run start",
-    "storybook:build": "build-storybook -c .storybook -o ./docs",
-    "test": "jest"
-  },
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "babel-preset-react": "6.24.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.12.7",
-    "@babel/core": "^7.12.9",
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "^7.12.7",
-    "@babel/preset-react": "^7.12.7",
-    "@storybook/addon-knobs": "^6.1.9",
-    "@storybook/react": "^6.1.9",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-styled-components": "^1.12.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "node-sass": "^5.0.0",
-    "path": "^0.12.7",
-    "sass-loader": "^10.1.0",
-    "webpack": "4.44.2",
-    "webpack-cli": "^4.2.0",
-    "webpack-node-externals": "^2.5.2"
-  }
+    "name": "@msaroy-crey/storybook-gh-action-test",
+    "version": "0.0.5",
+    "description": "Functional components, Storybook",
+    "author": "Crey Games ApS",
+    "license": "Proprietary and confidential",
+    "watch": true,
+    "main": "dist/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/msaroy-crey/storybook-gh-action-test.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "scripts": {
+        "start": "start-storybook -p 1339 -s ./.storybook",
+        "dist": "babel src --out-dir dist --copy-files",
+        "reinstall": "(if exist rmdir /Q /S node_modules) && npm i",
+        "storybook": "npm run start",
+        "storybook:build": "build-storybook -c .storybook -o ./docs",
+        "test": "jest"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "babel-preset-react": "6.24.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.12.7",
+        "@babel/core": "^7.12.9",
+        "@babel/plugin-proposal-class-properties": "7.12.1",
+        "@babel/polyfill": "7.12.1",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-react": "^7.12.7",
+        "@storybook/addon-knobs": "^6.1.9",
+        "@storybook/react": "^6.1.9",
+        "babel-loader": "^8.2.2",
+        "babel-plugin-styled-components": "^1.12.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "node-sass": "^5.0.0",
+        "path": "^0.12.7",
+        "sass-loader": "^10.1.0",
+        "webpack": "4.44.2",
+        "webpack-cli": "^4.2.0",
+        "webpack-node-externals": "^2.5.2"
+    }
 }
