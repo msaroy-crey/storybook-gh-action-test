@@ -24,8 +24,17 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "Overwrite main folder"
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Npm Install 
-        run: npm i
+      - name: Npm Install and build
+        run: |
+          npm i
+          npm run storybook:build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master # The branch the action should deploy to.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          FOLDER: docs # The folder that the build-storybook script generates files.
       - name: Distribution 
         run: npm run dist
       - name: Update version ${{ github.event.release.tag_name }}
