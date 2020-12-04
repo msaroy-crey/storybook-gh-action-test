@@ -1,14 +1,8 @@
 name: Publish npm package to storybook actions test
 
-#on:
-#  release:
-#    types: [created]
-
-# debug
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [created]
       
 jobs:
   publish:
@@ -38,11 +32,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/
-          # keep_files: true
-          publish_branch: master
+          publish_dir: ./storybook-static
+          publish_branch: gh-pages
           # publish_dir: ./docs # Set an input directory for deployment.
-          # destination_dir: ./docs # Set an destination subdirectory for deployment.
+          destination_dir: ./docs # Set an destination subdirectory for deployment.
       - name: Distribution 
         run: npm run dist
       - name: Update version ${{ github.event.release.tag_name }}
