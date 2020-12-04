@@ -1,14 +1,8 @@
 name: Publish npm package to storybook actions test
 
-#on:
-#  release:
-#    types: [created]
-
-# debug
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [created]
       
 jobs:
   publish:
