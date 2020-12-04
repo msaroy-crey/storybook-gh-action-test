@@ -8,7 +8,7 @@ export default {
 }
 
 export const button = () => {
-    const message = text('Text', 'Click here now!')
+    const message = text('Text', `Don't click here!`)
     return (
         <>
             <img src={STORY_IMG} />
