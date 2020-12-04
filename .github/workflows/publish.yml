@@ -32,7 +32,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # The folder that we serve our Storybook files from
+          publish_dir: ./docs # Set an input directory for deployment.
+          destination_dir: ./docs # Set an destination subdirectory for deployment.
       - name: Distribution 
         run: npm run dist
       - name: Update version ${{ github.event.release.tag_name }}
