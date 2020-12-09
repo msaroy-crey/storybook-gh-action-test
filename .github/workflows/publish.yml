@@ -28,8 +28,9 @@ jobs:
         run: npm i
       - name: Distribution 
         run: npm run dist
-      - name: Npm Build & Deploy
+      - name: Npm Build
         run: npm run storybook:build
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
