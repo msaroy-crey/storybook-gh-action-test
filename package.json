@@ -1,6 +1,6 @@
 {
     "name": "@msaroy-crey/storybook-gh-action-test",
-    "version": "0.0.11",
+    "version": "0.0.24",
     "description": "Functional components, Storybook",
     "author": "Crey Games ApS",
     "license": "Proprietary and confidential",
@@ -18,7 +18,7 @@
         "dist": "babel src --out-dir dist --copy-files",
         "reinstall": "(if exist rmdir /Q /S node_modules) && npm i",
         "storybook": "npm run start",
-        "storybook:build": "build-storybook -c .storybook -o ./docs",
+        "storybook:build": "build-storybook -c .storybook",
         "test": "jest"
     },
     "dependencies": {
