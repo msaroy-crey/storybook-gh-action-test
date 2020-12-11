@@ -24,20 +24,20 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "Overwrite main folder"
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Npm Install
-        run: npm i
-      - name: Distribution 
-        run: npm run dist
-      - name: Npm Build
-        run: npm run storybook:build
+      - name: Npm Install and build
+        run: |
+          npm i
+          npm run storybook:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
+          publish_dir: ./docs
           publish_branch: gh-pages
           # publish_dir: ./docs # Set an input directory for deployment.
           destination_dir: ./docs # Set an destination subdirectory for deployment.
+      - name: Distribution 
+        run: npm run dist
       - name: Update version ${{ github.event.release.tag_name }}
         run: | 
           git config --local user.email "${{ github.actor }}-action@github.com"
@@ -61,4 +61,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: master
           commit-message: "Release"
-          rebase: 'true' # pull abd rebase before commit:
+          rebase: 'true' # pull abd rebase before commit:  
