@@ -18,7 +18,7 @@
         "dist": "babel src --out-dir dist --copy-files",
         "reinstall": "(if exist rmdir /Q /S node_modules) && npm i",
         "storybook": "npm run start",
-        "storybook:build": "build-storybook -c .storybook",
+        "storybook:build": "build-storybook -c .storybook -o ./docs/",
         "test": "jest"
     },
     "dependencies": {
