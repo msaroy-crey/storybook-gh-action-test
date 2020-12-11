@@ -21,7 +21,7 @@ var _default = {
 exports["default"] = _default;
 
 var button = function button() {
-  var message = (0, _addonKnobs.text)('Text', 'Click here now!');
+  var message = (0, _addonKnobs.text)('Text', "Don't click here!");
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("img", {
     src: _deathrun_medium["default"]
   }), /*#__PURE__*/_react["default"].createElement(_index["default"], {
